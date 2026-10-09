@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import BanglaDate from "./BanglaDate";
+import UserMenu from "./UserMenu";
 
 const Navbar = () => {
     return (
@@ -26,6 +27,7 @@ const Navbar = () => {
                     </button>
                 </div>
             </Link>
+            <UserMenu/>
         </div>
     );
 };
