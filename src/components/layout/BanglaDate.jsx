@@ -1,19 +1,14 @@
-"use client"
+"use client";
 import { useEffect, useState } from "react";
+import { getBanglaDate } from "@/lib/utils";
 
-const getBanglaDate = () =>{
-    return new Date().toLocaleDateString("bn-bd",{
-        dateStyle:"full",
-    });
-};
+export default function BanglaDate() {
+  const [date, setDate] = useState("");
 
-const BanglaDate = () => {
-    const [date, setDate] = useState("");
-    useEffect(() => {
-        const timeOut = setTimeout(() => setDate(getBanglaDate()),0);
-        return() => clearTimeout(timeOut);
-    }, []);
-    return <span>{date}</span>
-};
+  useEffect(() => {
+    const timeout = setTimeout(() => setDate(getBanglaDate()), 0);
+    return () => clearTimeout(timeout);
+  }, []);
 
-export default BanglaDate;
+  return <span>{date}</span>;
+}
