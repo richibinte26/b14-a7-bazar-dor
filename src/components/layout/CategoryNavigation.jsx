@@ -1,6 +1,6 @@
 import NavLink from "./NavLink";
 
-export default async function CategoryNav() {
+export default async function CategoryNavigation() {
   const res = await fetch(
     "https://api.abcz.workers.dev/api/bazardor/categories",
     { cache: "no-store" }
