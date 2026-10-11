@@ -1,7 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import ProductCard from "@/components/products/ProductCard";
+import ProductCard from "../../components/products/ProductCard";
+import { toBnDigits } from "@/lib/utils";
 
 export default function CategoryProducts({ products }) {
   const [sortOrder, setSortOrder] = useState("default");
@@ -20,6 +21,7 @@ export default function CategoryProducts({ products }) {
 
   return (
     <div className="">
+      {/* Sort */}
       <div className=" bg-white rounded-xl py-3 px-4 mb-5 flex items-center justify-end gap-2">
         <label
           htmlFor="sort"
@@ -41,9 +43,10 @@ export default function CategoryProducts({ products }) {
       </div>
 
       <p className="my-3 text-sm text-gray-500">
-          মোট {products.length} টি পণ্য দেখানো হচ্ছে
+          মোট {toBnDigits(products.length)}টি পণ্য দেখানো হচ্ছে
         </p>
 
+      {/* Products */}
       <div className="grid gap-4 sm:grid-cols-2 md:grid-cols-3 ">
         {sortedProducts.map((product) => (
           <ProductCard

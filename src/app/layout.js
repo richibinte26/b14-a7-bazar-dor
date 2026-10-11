@@ -1,14 +1,14 @@
-import { Noto_Serif_Bengali } from "next/font/google";
+import { Suspense } from "react";
+import { Hind_Siliguri } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/layout/Navbar";
-import { Suspense } from "react";
 import CategoryNavigation from "@/components/layout/CategoryNavigation";
 import PriceTicker from "@/components/layout/PriceTicker";
 import Footer from "@/components/layout/Footer";
 import { Toaster } from "react-hot-toast";
 
-const notoSerifBengali = Noto_Serif_Bengali({
-  subsets: ["latin", "bengali"],
+const hindSiliguri = Hind_Siliguri({
+  subsets: ["bengali", "latin"],
   weight: ["400", "500", "600", "700"],
 });
 
@@ -20,8 +20,8 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="bn" data-theme="light">
-      <body className={notoSerifBengali.className}>
-        <Toaster/>
+      <body className={`${hindSiliguri.className} flex min-h-screen flex-col`}>
+        <Toaster />
         <header className="border-b border-gray-200 bg-[#fbfcfb]">
           <Navbar />
 
@@ -34,16 +34,20 @@ export default function RootLayout({ children }) {
               </div>
             }
           >
-            <CategoryNavigation/>
+            <CategoryNavigation />
           </Suspense>
         </header>
+
         <Suspense fallback={<div className="skeleton h-12 w-full rounded-none" />}>
           <PriceTicker />
         </Suspense>
 
-        <main className="mx-auto max-w-6xl px-4 py-6">{children}</main>
-        <Footer />
+        <main className="mx-auto w-full max-w-6xl flex-1 px-4 py-6">
+          {children}
+          
+          </main>
 
+        <Footer />
       </body>
     </html>
   );

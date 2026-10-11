@@ -6,14 +6,15 @@ export default function HeroBanner() {
   return (
     <section className="overflow-hidden rounded-3xl bg-white">
       <div className="px-6 pt-3 sm:px-10 md:px-12">
-        
         {/* Date */}
-        <p className="inline-block rounded-lg bg-green-100 px-3 py-0.5 mt-2 text-sm font-medium leading-4 text-green-700">
+        <p className=" inline-block rounded-lg bg-green-100 px-3  py-1 mt-2 text-sm font-bold leading-4 text-green-700">
           <BanglaDate />
         </p>
 
         {/* Hero Content */}
-        <div className="flex flex-col gap-3 pb-5 pt-2 md:-mt-15 md:flex-row md:items-center md:gap-6 md:pb-4 md:pt-0 ">
+
+        <div className="flex flex-col gap-3 pb-5 pt-6 md:mt-0 md:flex-row md:items-center md:gap-6 md:pb-4 md:pt-2 lg:pt-0 lg:-mt-12">
+          
           {/* Left Content */}
           <div className="w-full max-w-xl">
             <h1 className="m-0 text-3xl font-bold leading-tight text-gray-900 sm:text-4xl">
@@ -26,13 +27,12 @@ export default function HeroBanner() {
             </p>
 
             <Link
-              href="#products"
+              href="#সব-পণ্য"
               className="mt-4 inline-flex rounded-xl bg-green-700 px-4 py-2 text-xs font-semibold text-white transition hover:bg-green-800"
             >
               সব পণ্য দেখুন
             </Link>
           </div>
-
           {/* Right Image */}
           <div className="mx-auto flex w-full max-w-xs justify-center md:ml-auto md:max-w-sm">
             <Image

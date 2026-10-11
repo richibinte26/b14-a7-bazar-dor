@@ -1,8 +1,9 @@
 import ProductCard from "@/components/products/ProductCard";
+import { toBnDigits } from "@/lib/utils";
 
 export default function AllProducts({ products }) {
   return (
-    <section id="products" className="mt-12">
+    <section id="সব-পণ্য" className="mt-12">
       <div className="mb-5">
         <p className="text-sm font-semibold text-green-700">
           বাজারের সব পণ্য
@@ -14,7 +15,7 @@ export default function AllProducts({ products }) {
           </h2>
 
           <span className="text-sm text-gray-500">
-            মোট {products.length} টি পণ্য
+            মোট {toBnDigits(products.length)}টি পণ্য
           </span>
         </div>
       </div>
