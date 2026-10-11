@@ -7,7 +7,7 @@ const Navbar = () => {
   return (
     <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3">
       <Link href="/" className="flex items-center gap-3">
-        <div >
+        <div className="bg-green-700 p-2 rounded-xl text-white">
           <Image
             src="/images/logo-icon.png"
             alt="বাজার দর"
